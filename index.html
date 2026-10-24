@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>نبراس</title>
+<meta name="description" content="تطبيق نبراس — منصة التوجيه الطلابي بالثانوية الثامنة والثلاثون بالمدينة المنورة">
+<meta name="theme-color" content="#fbf7ef">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="نبراس">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg1:#fbf7ef;--bg2:#efe6d6;--gold:#d9b86a;--gold2:#b8892f;--goldL:#8a6420;--txt:#0f3057;--muted:#5b4b33}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{min-height:100vh;background:linear-gradient(160deg,var(--bg1),var(--bg2));color:var(--txt);font-family:Tajawal,Tahoma,Arial,sans-serif;display:flex;align-items:center;justify-content:center;padding:calc(24px + env(safe-area-inset-top)) 16px calc(24px + env(safe-area-inset-bottom));text-align:center;overflow-x:hidden}
+.box{width:100%;max-width:420px}
+.logo{width:132px;height:132px;border-radius:30px;box-shadow:0 0 0 1px #d9b86a55,0 18px 50px #d9b86a33;animation:glow 3.2s ease-in-out infinite}
+@keyframes glow{50%{box-shadow:0 0 0 1px #d9b86a88,0 18px 60px #f0d58c55}}
+h1{margin:18px 0 4px;font-size:44px;font-weight:800;background:linear-gradient(100deg,#0f3057 20%,#b8892f 50%,#0f3057 80%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{color:var(--goldL);font-size:16px;margin:0 0 4px}
+.school{color:var(--muted);font-size:13px;margin:0 0 26px}
+.btn{display:block;width:100%;border:0;border-radius:16px;padding:15px;font:700 17px Tajawal,Tahoma,sans-serif;cursor:pointer;text-decoration:none;margin-bottom:12px}
+.primary{background:linear-gradient(135deg,#e6c36f,var(--gold2));color:#1b1608}
+.ghost{background:#ffffffb3;color:var(--txt);border:1px solid #d9b86a55}
+.card{background:#ffffffcc;border:1px solid #d9b86a40;border-radius:18px;padding:16px;text-align:right;margin-bottom:14px}
+.card h2{font-size:16px;margin:0 0 10px;color:var(--goldL)}
+.card ol{margin:0;padding-right:20px;line-height:2;font-size:15px}
+.hidden{display:none!important}
+.loader{width:42px;height:42px;border:3px solid #d9b86a33;border-top-color:var(--gold);border-radius:50%;margin:8px auto 14px;animation:spin 1s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.foot{color:#7a6a50;font-size:11.5px;margin-top:18px;line-height:1.8}
+@media(prefers-reduced-motion:reduce){.logo,.loader{animation:none}}
+</style>
+</head>
+<body>
+<div class="box">
+  <img class="logo" src="icon-512.png" alt="شعار نبراس">
+  <h1>نبراس</h1>
+  <p class="sub">منصة التوجيه الطلابي</p>
+  <p class="school">الثانوية الثامنة والثلاثون بالمدينة المنورة</p>
+
+  <!-- عند فتح التطبيق بعد تثبيته -->
+  <div id="launch" class="hidden">
+    <div class="loader"></div>
+    <a class="btn primary" id="go2" href="#">الدخول إلى المنصة</a>
+  </div>
+
+  <!-- صفحة التحميل من الرابط -->
+  <div id="install">
+    <button class="btn primary hidden" id="installBtn">📲 تثبيت تطبيق نبراس</button>
+
+    <div class="card hidden" id="ios">
+      <h2>طريقة التثبيت على الآيفون</h2>
+      <ol>
+        <li>افتحي هذا الرابط من متصفح <b>Safari</b></li>
+        <li>اضغطي زر المشاركة <b>⬆️</b> أسفل الشاشة</li>
+        <li>اختاري <b>«إضافة إلى الشاشة الرئيسية»</b></li>
+        <li>اضغطي <b>«إضافة»</b> وستظهر أيقونة نبراس</li>
+      </ol>
+    </div>
+
+    <div class="card hidden" id="android">
+      <h2>طريقة التثبيت على الأندرويد</h2>
+      <ol>
+        <li>افتحي الرابط من متصفح <b>Chrome</b></li>
+        <li>اضغطي النقاط الثلاث <b>⋮</b> أعلى الشاشة</li>
+        <li>اختاري <b>«تثبيت التطبيق»</b> أو «إضافة إلى الشاشة الرئيسية»</li>
+      </ol>
+    </div>
+
+    <a class="btn ghost" id="go" href="#">الدخول إلى المنصة بدون تثبيت</a>
+  </div>
+
+  <p class="foot">التوجيه الطلابي · سميرة السهلي · سارة السناني<br>مديرة المدرسة: حنان الحربي</p>
+</div>
+
+<script>
+// رابط المنصة — غيّريه هنا فقط إن تغيّر رابط نبراس
+var PLATFORM = "https://claude.ai/artifact/6dLrdZapnbsLdcUPDqEuWb";
+
+var $ = function(id){return document.getElementById(id)};
+$("go").href = PLATFORM; $("go2").href = PLATFORM;
+
+var standalone = window.matchMedia("(display-mode: standalone)").matches || window.navigator.standalone === true;
+var ua = navigator.userAgent;
+var isIOS = /iPhone|iPad|iPod/.test(ua) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+
+if (standalone) {
+  $("install").classList.add("hidden");
+  $("launch").classList.remove("hidden");
+  setTimeout(function(){ location.href = PLATFORM; }, 1200);
+} else if (isIOS) {
+  $("ios").classList.remove("hidden");
+} else {
+  $("android").classList.remove("hidden");
+}
+
+var promptEvt = null;
+window.addEventListener("beforeinstallprompt", function(e){
+  e.preventDefault(); promptEvt = e;
+  $("installBtn").classList.remove("hidden");
+  $("android").classList.add("hidden");
+});
+$("installBtn").addEventListener("click", function(){
+  if (!promptEvt) return;
+  promptEvt.prompt();
+  promptEvt.userChoice.then(function(){ promptEvt = null; $("installBtn").classList.add("hidden"); });
+});
+window.addEventListener("appinstalled", function(){
+  $("installBtn").textContent = "✅ تم تثبيت نبراس — افتحيه من الشاشة الرئيسية";
+  $("installBtn").classList.remove("hidden");
+});
+
+if ("serviceWorker" in navigator) {
+  try { navigator.serviceWorker.register("sw.js"); } catch (e) {}
+}
+</script>
+</body>
+</html>
